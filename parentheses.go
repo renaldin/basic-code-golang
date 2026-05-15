@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -35,12 +34,12 @@ func parenttheses(text string) bool {
 	return true
 }
 
-func main() {
-	text := "{[]}"
-	result := parenttheses(text)
-	fmt.Println("Input : ", text)
-	fmt.Println("Output : ", result)
-}
+// func main() {
+// 	text := "{[]}"
+// 	result := parenttheses(text)
+// 	fmt.Println("Input : ", text)
+// 	fmt.Println("Output : ", result)
+// }
 
 // 4. Valid Parentheses (Stack)
 
