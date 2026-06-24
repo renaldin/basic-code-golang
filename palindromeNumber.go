@@ -5,13 +5,13 @@ import (
 	"strings"
 )
 
-func palindromeNumber(num int) bool {
-	str := strconv.Itoa(num)
-	numArr := strings.Split(str, "")
+func isPalindromeNumber(number int) bool {
+	str := strconv.Itoa(number)
+	arrStr := strings.Split(str, "")
 	left := 0
-	right := len(numArr) - 1
+	right := len(arrStr) - 1
 	for left < right {
-		if numArr[left] != numArr[right] {
+		if arrStr[left] != arrStr[right] {
 			return false
 		}
 		left++
@@ -21,9 +21,9 @@ func palindromeNumber(num int) bool {
 }
 
 // func main() {
-// 	num := 212212
-// 	result := palindromeNumber(num)
-// 	fmt.Println("Output:", result)
+// 	number := 12121
+// 	result := isPalindromeNumber(number)
+// 	fmt.Println(result)
 // }
 
 

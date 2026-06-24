@@ -4,24 +4,22 @@ import (
 	"strings"
 )
 
-func isPalindrom(text string) string {
-	arrText := strings.Split(text, "")
-
+func isPalindrome(str string) string {
+	arrStr := strings.Split(str, "")
 	left := 0
-	right := len(arrText) - 1
-
+	right := len(arrStr) - 1
 	for left < right {
-		if arrText[left] != arrText[right] {
-			return "Not Palindrom"
+		if arrStr[left] != arrStr[right] {
+			return "Not Palindrome"
 		}
 		left++
 		right--
 	}
-	return "Palindrom"
+	return "Palindrome"
 }
 
 // func main() {
-// 	text := "level level levell"
-// 	result := isPalindrom(text)
+// 	str := "level level"
+// 	result := isPalindrome(str)
 // 	fmt.Println(result)
 // }

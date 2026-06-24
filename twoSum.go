@@ -1,23 +1,32 @@
 package main
 
-func twoSum(nums []int, target int) []int {
-	seen := make(map[int]int)
+import "fmt"
 
-	for i, num := range nums {
-		complement := target - num
-		if idx, found := seen[complement]; found {
-			return []int{idx, i}
+func twoSum(nums []int, target int) {
+	var arrCondition []int
+	for key, val := range nums {
+		arrCondition = append(arrCondition, key)
+		for key2, val2 := range nums {
+			found := false
+			for _, valCondition := range arrCondition {
+				if valCondition == key2 {
+					found = true
+				}
+			}
+			if found != true {
+				counting := val + val2
+				if counting == target {
+					fmt.Println([]int{key, key2})
+				}
+			}
 		}
-		seen[num] = i
 	}
-	return nil
 }
 
 // func main() {
-// 	nums := []int{2, 1, 7, 15}
+// 	nums := []int{2, 7, 11, 15, 4, 5, 7}
 // 	target := 9
-// 	arrResult := twoSum(nums, target)
-// 	fmt.Println(arrResult)
+// 	twoSum(nums, target)
 // }
 
 // 1. Two Sum (Array & Hashing)

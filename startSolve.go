@@ -1,27 +1,28 @@
 package main
 
+import "fmt"
+
+func startSolve(n int) {
+	nj := n + 3
+	startOne := 2
+	startTwo := 3
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= nj; j++ {
+			if j == startOne || j == startTwo {
+				fmt.Print("*")
+			} else {
+				fmt.Print(j)
+			}
+		}
+		startOne++
+		startTwo++
+		fmt.Println()
+	}
+}
+
 // func main() {
-// 	in := bufio.NewReader(os.Stdin)
-
-// 	fmt.Print("Input: ")
-// 	var n int
-// 	fmt.Fscan(in, &n)
-
-// 	fmt.Println("Output:")
-// 	for i := 1; i <= n; i++ {
-// 		num1 := i + 1
-// 		num2 := num1 + 1
-// 		for j := 1; j <= n+3; j++ {
-// 			if j == num1 {
-// 				fmt.Print("*")
-// 			} else if j == num2 {
-// 				fmt.Print("*")
-// 			} else {
-// 				fmt.Print(j)
-// 			}
-// 		}
-// 		fmt.Println()
-// 	}
+// 	n := 4
+// 	startSolve(n)
 // }
 
 // Buatlah fungsi yang dapat menghasilkan output seperti dibawah ini:

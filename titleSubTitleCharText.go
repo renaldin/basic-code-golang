@@ -1,37 +1,38 @@
 package main
 
 import (
+	"fmt"
 	"strings"
-	"unicode"
 )
 
-func toProperCase(s string) string {
-	words := strings.Fields(s)
-	for i, word := range words {
-		runes := []rune(word)
-		runes[0] = unicode.ToUpper(runes[0])
-		for j := 1; j < len(runes); j++ {
-			runes[j] = unicode.ToLower(runes[j])
+func extractString(str string) {
+	strArr := strings.Split(str, " ")
+	var resultArrTitle []string
+	var resultArrSubTitle []string
+	for keyFirst, val := range strArr {
+		valArr := strings.Split(val, "")
+		for key, valTwo := range valArr {
+			if key == 0 {
+				resultArrTitle = append(resultArrTitle, strings.ToUpper(valTwo))
+			} else {
+				resultArrTitle = append(resultArrTitle, strings.ToLower(valTwo))
+			}
+			if keyFirst == 0 && key == 0 {
+				resultArrSubTitle = append(resultArrSubTitle, strings.ToUpper(valTwo))
+			} else {
+				resultArrSubTitle = append(resultArrSubTitle, strings.ToLower(valTwo))
+			}
 		}
-		words[i] = string(runes)
+		resultArrTitle = append(resultArrTitle, " ")
+		resultArrSubTitle = append(resultArrSubTitle, " ")
 	}
-	return strings.Join(words, " ")
-}
-
-func convertText(text string) (string, string) {
-	words := strings.Fields(text)
-	words[0] = toProperCase(words[0])
-	for i := 1; i < len(words); i++ {
-		words[i] = strings.ToLower(words[i])
-	}
-	return toProperCase(text), strings.Join(words, " ")
+	fmt.Println("Title Format:", strings.Join(resultArrTitle, ""))
+	fmt.Println("Subtitle Format:", strings.Join(resultArrSubTitle, ""))
 }
 
 // func main() {
-// 	text := "SeLamAT PAGi semua halOo"
-// 	text1, text2 := convertText(text)
-// 	fmt.Println("Title format :", text1)
-// 	fmt.Println("Subtitle format :", text2)
+// 	str := "SeLamAT PAGi semua halOo"
+// 	extractString(str)
 // }
 
 

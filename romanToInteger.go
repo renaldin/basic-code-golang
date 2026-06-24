@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -34,11 +33,11 @@ func romanToInteger(s string) int {
 	return result
 }
 
-func main() {
-	roman := "MCMXCIV"
-	result := romanToInteger(roman)
-	fmt.Println(result)
-}
+// func main() {
+// 	roman := "MCMXCIV"
+// 	result := romanToInteger(roman)
+// 	fmt.Println(result)
+// }
 
 
 // 5. Roman to Integer

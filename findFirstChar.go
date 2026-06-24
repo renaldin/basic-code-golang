@@ -1,29 +1,35 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func findFirstChar(text string) string {
-	freq :=  map[string]int{}
-	textSlice := strings.Split(text, "")
-	for _, t := range textSlice {
-		freq[t]++
+func findFirstChar(str string) string {
+	strArr := strings.Split(str, "")
+	freq := make(map[string]int)
+
+	for _, val := range strArr {
+		freq[val]++
 	}
-	for char, count := range freq {
-		if count == 1 {
-			return char
-		} 
+
+	var resultArr []string
+	for key, val := range freq {
+		if val == 1 {
+			resultArr = append(resultArr, key)
+		}
 	}
-	return "-1"
+
+	if len(resultArr) == 0 {
+		return "-1"
+	}
+
+	return resultArr[0]
 }
 
 // func main() {
-// 	text := "aabbcdd"
-// 	result := findFirstChar(text)
-// 	fmt.Println("Input :", text)
-// 	fmt.Println("Output :", result)
+// 	str := "aabbcd"
+// 	result := findFirstChar(str)
+// 	fmt.Println(result)
 // }
 
 

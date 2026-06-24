@@ -1,33 +1,26 @@
 package main
 
-import (
-	"strconv"
-)
+import "fmt"
 
-func fizzBuzz(n int) []string {
-	var result []string
+func fizzBuzz(n int) {
 	for i := 1; i <= n; i++ {
-		kelip3 := i % 3
-		kelip5 := i % 5
-		if kelip3 == 0 && kelip5 == 0 {
-			result = append(result, "FizzBuzz")
-		} else if kelip3 == 0 {
-			result = append(result, "Fizz")
-		} else if kelip5 == 0 {
-			result = append(result, "Buzz")
+		fizz := i % 3
+		buzz := i % 5
+		if fizz == 0 && buzz == 0 {
+			fmt.Print("FizzBuzz ")
+		} else if fizz == 0 {
+			fmt.Print("Fizz ")
+		} else if buzz == 0 {
+			fmt.Print("Buzz ")
 		} else {
-			result = append(result, strconv.Itoa(i))
+			fmt.Print(i, " ")
 		}
 	}
-	return result
-
 }
 
 // func main() {
 // 	n := 15
-// 	result := fizzBuzz(n)
-// 	fmt.Println("Input: n = ", n)
-// 	fmt.Println("Output: ", result)
+// 	fizzBuzz(n)
 // }
 
 // 3. FizzBuzz

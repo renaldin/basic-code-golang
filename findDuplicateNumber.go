@@ -1,23 +1,20 @@
 package main
 
-func findDuplicate(nums []int) []int {
-	freq := make(map[int]int)
-	for _, num := range nums {
-		freq[num]++
-	}
-	var result []int
-	for key, val := range freq {
-		if val > 1 {
-			result = append(result, key)
-		}
-	}
-	return result
-}
+// func findDuplcateNumber(intArr []int) {
+// 	freq := make(map[int]int)
+// 	for _, i := range intArr {
+// 		freq[i]++
+// 	}
+// 	for key, val := range freq {
+// 		if val > 1 {
+// 			fmt.Println(key, "=", val)
+// 		}
+// 	}
+// }
 
 // func main() {
-// 	nums := []int{1, 2, 3, 4, 2, 5, 3}
-// 	result := findDuplicate(nums)
-// 	fmt.Println(result)
+// 	intArr := []int{1, 2, 3, 4, 2, 5, 5}
+// 	findDuplcateNumber(intArr)
 // }
 
 // 3. Find Duplicate Number
@@ -26,5 +23,5 @@ func findDuplicate(nums []int) []int {
 
 // Contoh:
 
-// Input: [1, 2, 3, 4, 2, 5]  
+// Input: [1, 2, 3, 4, 2, 5]
 // Output: 2

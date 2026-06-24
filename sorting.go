@@ -4,7 +4,6 @@ package main
 
 // func main() {
 // 	arrInt := []int{3, 1, 5, 2, 4}
-// 	// sort.Ints(arrInt) // asc
 // 	sort.Sort(sort.Reverse(sort.IntSlice(arrInt)))
 // 	fmt.Println(arrInt)
 // }

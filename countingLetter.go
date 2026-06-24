@@ -4,30 +4,29 @@ import (
 	"strings"
 )
 
-func frequencyLetter(text string) string {
-	freq := map[string]int{}
-	textLower := strings.ToLower(text)
-	textArr := strings.Split(textLower, "")
-
-	for _, t := range textArr {
-		freq[t]++
+func coutningLetter(str string) string {
+	freq := make(map[string]int)
+	strToLower := strings.ToLower(str)
+	strArr := strings.Split(strToLower, "")
+	for _, str := range strArr {
+		freq[str]++
 	}
-
+	var result string
 	maxCount := 0
-	var textResult string
-
-	for char, count := range freq {
-		if count > maxCount {
-			maxCount = count
-			textResult = char
+	for key, val := range freq {
+		if val > maxCount {
+			maxCount = val
+			result = key
 		}
 	}
-
-	return textResult
+	return result
 }
 
 // func main() {
-// 	text := "Hellooo"
-// 	char := frequencyLetter(text)
-// 	fmt.Println(char)
+// 	str := "Hellooo"
+// 	result := coutningLetter(str)
+// 	fmt.Println(result)
 // }
+
+// buatkan function yang dimana outoutnya adalah jumlah huruf yang paling besar yang dikeluarkan
+// contoh input hellooo dan outputnya adalah o dan harus mengeluarkan huruf kecil

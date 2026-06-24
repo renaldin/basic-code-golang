@@ -1,25 +1,25 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func reverseString(text string) string {
-	textArray := strings.Split(text, "")
-	var resultArray []string
-	for _, t := range textArray {
-		resultArray = append([]string{t}, resultArray...)
+func reverseString(str string) string {
+	strArr := strings.Split(str, "")
+	right := len(strArr) - 1
+	var resultTemp []string
+	for i := 0; i < len(strArr); i++ {
+		resultTemp = append(resultTemp, strArr[right])
+		right--
 	}
-	return strings.Join(resultArray, "")
+	return strings.Join(resultTemp, "")
 }
 
 // func main() {
-// 	text := "hello11"
-// 	resultReverse := reverseString(text)
-// 	fmt.Println("Input: ", text)
-// 	fmt.Println("Output: ", resultReverse)
-}
+// 	str := "helloo"
+// 	result := reverseString(str)
+// 	fmt.Println(result)
+// }
 
 // 2. Reverse String
 

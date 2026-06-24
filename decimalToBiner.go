@@ -12,6 +12,9 @@ func decimalToBiner(n int) {
 }
 
 // func main() {
-// 	n := 3
+// 	n := 4
 // 	decimalToBiner(n)
 // }
+
+// case
+// change decimal to biner

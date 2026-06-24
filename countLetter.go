@@ -9,11 +9,12 @@ type CharCount struct {
 // 	text := "aaabbcccaaaac"
 // 	textArr := strings.Split(text, "")
 
-// 	var charCount []CharCount
 // 	tempChar := textArr[0]
 // 	tempCount := 1
-// 	for i := 1; i < len(textArr); i++ {
-// 		if (tempChar == textArr[i]) {
+// 	charCount := []CharCount{}
+
+// 	for i := 1; i < len(textArr); i++{
+// 		if tempChar == textArr[i] {
 // 			tempCount++
 // 		} else {
 // 			charCount = append(charCount, CharCount{Char: tempChar, Count: tempCount})
@@ -21,8 +22,21 @@ type CharCount struct {
 // 			tempChar = textArr[i]
 // 		}
 // 	}
+
 // 	charCount = append(charCount, CharCount{Char: tempChar, Count: tempCount})
+
 // 	for _, char := range charCount {
 // 		fmt.Println(char.Char, " = ", char.Count)
 // 	}
 // }
+
+
+// input
+// "aaabbcccaaaac"
+
+// output
+// a  =  3
+// b  =  2
+// c  =  3
+// a  =  4
+// c  =  1

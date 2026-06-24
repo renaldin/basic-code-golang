@@ -4,41 +4,36 @@ import (
 	"strings"
 )
 
-func parenttheses(text string) bool {
-	var textArrayTwo []string
-	mapDef := map[string]string {
-		"}": "{",
-		")": "(",
+func parentheses(str string) bool {
+	charMap := map[string]string{
 		"]": "[",
+		")": "(",
+		"}": "{",
 	}
-	textArray := strings.Split(text, "")
-	checkMod := len(textArray) % 2
-	if checkMod != 0 {
+	strArr := strings.Split(str, "")
+	modStr := len(strArr) % 2
+	if modStr != 0 {
 		return false
 	}
-	for _, t := range textArray {
-		if t == "(" || t == "{" || t == "[" {
-			textArrayTwo = append(textArrayTwo, t)
+	var tempArr []string
+	for _, val := range strArr {
+		if val == "(" || val == "{" || val == "[" {
+			tempArr = append(tempArr, val)
 		} else {
-			lastIndex := len(textArrayTwo) - 1
-			if lastIndex < 0 {
+			lenTmepArr := len(tempArr) - 1
+			if charMap[val] != tempArr[lenTmepArr] {
 				return false
 			}
-			lastValue := textArrayTwo[lastIndex]
-			if lastValue != mapDef[t] {
-				return false
-			}
-			textArrayTwo = append(textArrayTwo[:lastIndex], textArrayTwo[lastIndex + 1:]...)
+			tempArr = append(tempArr[:lenTmepArr], tempArr[lenTmepArr + 1:]...)
 		}
 	}
 	return true
 }
 
 // func main() {
-// 	text := "{[]}"
-// 	result := parenttheses(text)
-// 	fmt.Println("Input : ", text)
-// 	fmt.Println("Output : ", result)
+// 	str := "[({[()]})]"
+// 	result := parentheses(str)
+// 	fmt.Println(result)
 // }
 
 // 4. Valid Parentheses (Stack)

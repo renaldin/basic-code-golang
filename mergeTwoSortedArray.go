@@ -4,19 +4,18 @@ import (
 	"sort"
 )
 
-func mergeTwoArray(arr1 []int, arr2 []int) []int {
-	arr := arr1
-	for _, num := range arr2 {
-		arr = append(arr, num)
+func mergeArray(arr1 []int, arr2 []int) []int {
+	for _, val := range arr2 {
+		arr1 = append(arr1, val)
 	}
-	sort.Sort(sort.Reverse(sort.IntSlice(arr)))
-	return arr
+	sort.Ints(arr1)
+	return arr1
 }
 
 // func main() {
 // 	arr1 := []int{1, 3, 5}
 // 	arr2 := []int{2, 4, 6}
-// 	result := mergeTwoArray(arr1, arr2)
+// 	result := mergeArray(arr1, arr2)
 // 	fmt.Println(result)
 // }
 
