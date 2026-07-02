@@ -23,11 +23,11 @@ func isPalindromeChekcer(str string) bool {
 	return true
 }
 
-func main() {
-	str := "A man a plan a canal Panama"
-	result := isPalindromeChekcer(str)
-	fmt.Println(result)
-}
+// func main() {
+// 	str := "A man a plan a canal Panama"
+// 	result := isPalindromeChekcer(str)
+// 	fmt.Println(result)
+// }
 
 // Problem:
 // Write a function that determines whether a given string is a palindrome. Ignore spaces, punctuation, and letter casing.
